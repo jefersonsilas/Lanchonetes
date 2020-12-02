@@ -1,0 +1,25 @@
+{
+    "folders": [
+		{
+			"path": "."
+		}
+	],
+    "launch": {
+        "version": "0.2.0",
+        "pythonPath": "${workspaceFolder}/venv/bin/python3.8",
+        "configurations": [
+            {
+                "name": "Django",
+                "type": "python",
+                "request": "launch",
+                "stopOnEntry": false,     
+                "program": "${workspaceFolder}/manage.py",
+                "args": [
+                    "runserver",
+                    "--no-color",
+                    "--noreload"
+                ],
+            }
+        ]
+    }
+}
