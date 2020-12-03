@@ -11,7 +11,6 @@ from rest_framework.views import APIView
 from django.http import Http404
 
 class Login(APIView):
-    #gerente de ti = admin, cliente, admin, gerente da rede, 
 
     def post(self, request):
         nome = request.POST['nome']
