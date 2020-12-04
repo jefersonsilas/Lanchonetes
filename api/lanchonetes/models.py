@@ -28,7 +28,7 @@ class Categoria(models.Model):
 class Produto(models.Model):
 
     nome = models.CharField(max_length=200)
-    imagem = models.ImageField(blank=False, null=False, upload_to='api/lanchonetes/assets/imagens/')
+    imagem = models.CharField(max_length=200)
     descricao = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.RESTRICT)
 

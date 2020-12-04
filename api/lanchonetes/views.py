@@ -22,6 +22,7 @@ class Login(APIView):
             if user is not None:
                 cliente = Group.objects.get(name='cliente')
                 user.groups.add(cliente)
+                login(request,user)
                 return Response(True, status=status.HTTP_200_OK)
         except (Exception, IntegrityError) as e:
             return Response(data=False, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -40,12 +41,9 @@ class Login(APIView):
 
 class Logout(APIView):
 
-    def do_logout(request, pk):
-        logout(request)
-        return Response(True) #redireciona para a página de login novamente
-
     def get(self, request):
-        self.do_logout(request)
+        logout(request)
+        return Response(True)
         
 
 class LojasList(APIView):
